@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <p onmouseover="mostrarTexto()">Bem vindo: 1</p>
+    <div>
+      <p onmouseover="mostrarTexto()">Bem vindo: 2</p>
+      <p onmouseover="mostrarTexto()">Bem vindo: 3</p>
+      <p onmouseover="mostrarTexto()">
+        Bem vindo: 10
+        <button id="botao">botao</button>
+      </p>
+    </div>
+    <p onmouseover="mostrarTexto()">Bem vindo: 4</p>
+
+    <script>
+      // let botaoElement = document.querySelector("#botao");
+      // let botaoElement2 = document.getElementById("botao");
+
+      let paragrafoElement = document.querySelectorAll("div p");
+
+      let divElement = document
+        .getElementsByTagName("div")[0]
+        .getElementsByTagName("p");
+
+      console.log(paragrafoElement);
+      console.log(divElement);
+    </script>
+  </body>
+</html>

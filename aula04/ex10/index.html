@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="paragrafo">Bem vindo:</p>
+
+    <button id="botao">Cancelar Evento Mouse over</button>
+
+    <script>
+      let contador = 1;
+      let paragrafoElement = document.querySelector("#paragrafo");
+      let botaoElement = document.querySelector("#botao");
+
+      paragrafoElement.addEventListener("mouseover", mostrarTexto);
+      paragrafoElement.addEventListener("click", () => {
+        paragrafoElement.removeEventListener("mouseover", mostrarTexto);
+      });
+
+      // setTimeout(() => {
+      //   paragrafoElement.removeEventListener("mouseover", mostrarTexto);
+      // }, 2000);
+
+      botaoElement.addEventListener("click", () => {
+        paragrafoElement.removeEventListener("mouseover", mostrarTexto);
+      });
+
+      function mostrarTexto() {
+        let pElement = document.getElementsByTagName("p")[0];
+        console.log(pElement.innerText + "" + contador);
+        contador++;
+      }
+    </script>
+  </body>
+</html>

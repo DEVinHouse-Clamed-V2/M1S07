@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formulario">
+      <input name="nome" type="text" placeholder="informe seu nome" />
+      <input type="submit" value="Adicionar" />
+    </form>
+  </body>
+
+  <script>
+    let formulario = document.querySelector("#formulario");
+
+    formulario.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      console.log(e);
+      // let formulario = document.getElementsByName("formulario")[0];
+      let formulario = document.getElementById("formulario");
+
+      if (!formulario.nome.value.trim()) {
+        alert("Informe nome válido");
+      } else {
+        console.log(formulario.nome.value);
+        addPessoa(formulario.nome.value);
+        formulario.nome.value = "";
+      }
+    });
+
+    function addPessoa(nome) {
+      let pessoaElement = document.createElement("p");
+      pessoaElement.innerText = nome;
+
+      document.querySelector("body").appendChild(pessoaElement);
+    }
+  </script>
+</html>

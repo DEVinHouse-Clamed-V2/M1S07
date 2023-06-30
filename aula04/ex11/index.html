@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="inputPesquisa" type="text" placeholder="Pesquisar..." />
+
+    <script>
+      let inputPesquisa = document.querySelector("#inputPesquisa");
+
+      inputPesquisa.addEventListener("keydown", (e) => {
+        console.log(inputPesquisa.value);
+      });
+    </script>
+  </body>
+</html>
